@@ -329,6 +329,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 657b498c9e13f974e881fd398fe219fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frequency: 1
+  gain: 0.5
+  Sin: 0
+  Square: 0
+  Triangle: 0
+  Sawtooth: 0
 --- !u!4 &1002396722
 Transform:
   m_ObjectHideFlags: 0

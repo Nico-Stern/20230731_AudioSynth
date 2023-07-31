@@ -6,7 +6,7 @@ public class Synthesizer : MonoBehaviour
 {
     private System.Random random;
 
-    [Range(220, 1760)]
+    [Range(0, 20000)]
     public double frequency = 440;
     
     [Range(0, 1f)]
@@ -18,6 +18,11 @@ public class Synthesizer : MonoBehaviour
 
     private double phase;
     private double increment;
+
+    [SerializeField] private bool Sin;
+    [SerializeField] private bool Square;
+    [SerializeField] private bool Triangle;
+    [SerializeField] private bool Sawtooth;
     
     private void Start()
     {
@@ -39,10 +44,16 @@ public class Synthesizer : MonoBehaviour
             if (phase > Math.PI * 2) phase -= Math.PI * 2;
 
             // Sin
-            buffer[i] = Mathf.Sin((float)phase);
+            //buffer[i] = Mathf.Sin((float)phase);
             
             // Square
-            //buffer[i] = Mathf.Sin((float)phase) >= 0 ? 1 : -1;
+            buffer[i] = Mathf.Sin((float)phase) >= 0 ? 1 : -1;
+            
+            //Sawtooth
+
+            //Triangle
+            //buffer[i] = Mathf.PingPong((float)phase,2)-1;
+            
 
             buffer[i + 1] = buffer[i];
             
